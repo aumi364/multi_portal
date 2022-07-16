@@ -22,15 +22,9 @@ module.exports = {
             "presets": ["@babel/preset-react"]
         },
         "requireConfigFile": false,
-
     },
     "plugins": [
         "react","import"
-    ],
-    "overrides": [
-        {
-            "files": ["*.jsx", "*.js"]
-        }
     ],
     "rules": {
         "no-unused-vars" :'warn',
