@@ -37,5 +37,14 @@ module.exports = {
         "react/jsx-uses-vars": "error",
         "import/no-unresolved": [2, { commonjs: true }]
 
-    }
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"],
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+            }
+        }
+
 }
