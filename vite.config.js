@@ -4,8 +4,8 @@ import svgr from '@honkhonk/vite-plugin-svgr';
 import react from '@vitejs/plugin-react';
 import analyze from 'rollup-plugin-analyzer';
 import fs from 'fs/promises';
-import reactRefresh from '@vitejs/plugin-react-refresh';
 import eslint from 'vite-plugin-eslint';
+import { theme } from './src/theme/theme';
 const path = require('path');
 
 export default defineConfig(() => ({
@@ -22,6 +22,9 @@ export default defineConfig(() => ({
     preprocessorOptions: {
       less: {
         javascriptEnabled: true,
+        modifyVars: {
+          'primary-color': theme.primary.main,
+        },
       },
     },
   },
@@ -48,10 +51,13 @@ export default defineConfig(() => ({
   plugins: [
     svgr(),
     react(),
+    eslint(),
     analyze({ summaryOnly: true }), // enable for show analyze build file
-    [eslint(), reactRefresh()],
   ],
   resolve: {
-    alias: [{ find: '@', replacement: path.resolve(__dirname, './src') }],
+    alias: [
+      { find: '@', replacement: path.resolve(__dirname, './src') },
+      { find: /^~/, replacement: '' },
+    ],
   },
 }));

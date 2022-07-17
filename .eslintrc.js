@@ -28,6 +28,12 @@ module.exports = {
     'no-unused-vars': 'warn',
     'react/jsx-uses-vars': 'error',
     'import/no-unresolved': [2, { commonjs: true }],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
   settings: {
     'import/resolver': {
