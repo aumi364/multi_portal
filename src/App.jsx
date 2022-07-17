@@ -1,16 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
-import Query from '../src/services/queries';
 
 function App() {
   const [count, setCount] = useState(0);
 
-  return (
-    <div className="App">
-      <Query />
-    </div>
-  );
+  return <div className="App">hello</div>;
 }
 
 export default App;
