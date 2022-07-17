@@ -8,7 +8,6 @@ import reactRefresh from '@vitejs/plugin-react-refresh';
 import eslint from 'vite-plugin-eslint';
 const path = require('path');
 
-
 export default defineConfig(() => ({
   server: {
     open: true,
@@ -51,7 +50,6 @@ export default defineConfig(() => ({
     react(),
     analyze({ summaryOnly: true }), // enable for show analyze build file
     [eslint(), reactRefresh()],
-
   ],
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, './src') }],
