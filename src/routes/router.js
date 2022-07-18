@@ -7,12 +7,11 @@ import { privateRoutes, publicRoutes } from './appRoutes';
 import { authStore } from '../store/auth';
 import { useGetCurrentUserRole } from '../hooks/useGetCurrentUserRole';
 import { appUrls } from '../utils/constraints/appUrls';
+import SplashScreen from '../features/splashScreen';
 
-// eslint-disable-next-line react/prop-types
 function PrivateRoute({ children }) {
   const currentUserRole = useGetCurrentUserRole();
-  console.log(currentUserRole);
-  const isLoggedIn = authStore(state => state.token);
+  const isLoggedIn = authStore(state => state?.token);
   return isLoggedIn ? (
     children
   ) : (
@@ -30,11 +29,11 @@ function RoutesCollection() {
   const NotFound = publicRoutes.error.notFound.component;
   return (
     <div>
-      <Suspense fallback={<Spin size="large" />}>
+      <Suspense fallback={<SplashScreen />}>
         <Router>
           <Routes>
             <Route
-              path={publicRoutes.landing}
+              path={appUrls.landing}
               element={<Navigate replace to={publicRoutes.signin.admin.path} />}
             />
             {publicRoutesList.map(routeElement => {

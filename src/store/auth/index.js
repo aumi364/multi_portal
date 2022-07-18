@@ -13,17 +13,6 @@ export const authStore = create(
           user: payload?.user,
           userType: payload?.type,
         }),
-      setPrescriptionCode: payload =>
-        set(state => ({
-          user: {
-            ...state.user,
-            prescription_code: payload?.prescription_code,
-          },
-        })),
-      setSecretCode: payload =>
-        set(state => ({
-          user: { ...state.user, secret_code: payload?.secret_code },
-        })),
       logout: () =>
         set({
           token: null,
