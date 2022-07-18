@@ -11,6 +11,7 @@
     "prettier:fix": "prettier --write ."
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "antd": "^4.21.6",

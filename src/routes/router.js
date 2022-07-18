@@ -1,15 +1,23 @@
-import React, { lazy, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Routes, Navigate } from 'react-router';
+import { Navigate, Routes } from 'react-router';
 import { Spin } from 'antd';
 import PropTypes from 'prop-types';
 import { privateRoutes, publicRoutes } from './appRoutes';
+import { authStore } from '../store/auth';
+import { useGetCurrentUserRole } from '../hooks/useGetCurrentUserRole';
+import { appUrls } from '../utils/constraints/appUrls';
 
 // eslint-disable-next-line react/prop-types
 function PrivateRoute({ children }) {
-  // const isLoggedIn = useSelector(state => state.Auth.token);
-  // return isLoggedIn ? children : <Navigate to={PUBLIC_ROUTE.SIGN_IN} />;
-  return children;
+  const currentUserRole = useGetCurrentUserRole();
+  console.log(currentUserRole);
+  const isLoggedIn = authStore(state => state.token);
+  return isLoggedIn ? (
+    children
+  ) : (
+    <Navigate to={`/${currentUserRole}/${appUrls.signin}`} />
+  );
 }
 
 PrivateRoute.propTypes = {
@@ -45,7 +53,11 @@ function RoutesCollection() {
                 <Route
                   key={routeElement.path}
                   path={routeElement.path}
-                  element={<RouteComponent />}
+                  element={
+                    <PrivateRoute>
+                      <RouteComponent />
+                    </PrivateRoute>
+                  }
                 />
               );
             })}
