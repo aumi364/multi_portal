@@ -18,26 +18,26 @@ export const theme = {
   },
   breakpoint: {
     xs: {
-      up: mq(0, 'up'),
-      down: mq(0, 'down'),
+      up: mq(480, 'up'),
+      down: mq(480, 'down'),
     },
     sm: {
-      up: mq(600, 'up'),
-      down: mq(600, 'down'),
-    },
-    nm: {
-      up: mq(800, 'up'),
-      down: mq(800, 'down'),
+      up: mq(768, 'up'),
+      down: mq(768, 'down'),
     },
     md: {
-      up: mq(1000, 'up'),
-      down: mq(1000, 'down'),
+      up: mq(992, 'up'),
+      down: mq(992, 'down'),
     },
     lg: {
       up: mq(1200, 'up'),
       down: mq(1200, 'down'),
     },
     xl: {
+      up: mq(1500, 'up'),
+      down: mq(1500, 'down'),
+    },
+    xxl: {
       up: mq(1920, 'up'),
       down: mq(1920, 'down'),
     },

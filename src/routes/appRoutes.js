@@ -2,6 +2,7 @@ import { lazy } from 'react';
 import { appUrls } from '../utils/constraints/appUrls';
 
 export const publicRoutes = {
+  landing: '/',
   signin: {
     admin: {
       path: appUrls.adminSignin,
