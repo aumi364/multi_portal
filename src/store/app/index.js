@@ -1,6 +1,6 @@
 import create from 'zustand';
 
-export const AppStore = create(set => ({
+export const appStore = create(set => ({
   collapsed: false,
   openDrawer: false,
   toggleCollapsed: () => set(state => ({ collapsed: !state.collapsed })),

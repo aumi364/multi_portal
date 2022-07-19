@@ -51,7 +51,7 @@ function RoutesCollection() {
               return (
                 <Route
                   key={routeElement.path}
-                  path={routeElement.path}
+                  path={`${routeElement.path}/*`}
                   element={
                     <PrivateRoute>
                       <RouteComponent />

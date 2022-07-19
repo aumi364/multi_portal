@@ -1,8 +1,8 @@
-import { lazy } from 'react';
+import React, { lazy } from 'react';
 import { appUrls } from '../utils/constraints/appUrls';
+import { FileOutlined, UserOutlined } from '@ant-design/icons';
 
 export const publicRoutes = {
-  landing: '/',
   signin: {
     admin: {
       path: appUrls.adminSignin,
@@ -21,7 +21,21 @@ export const privateRoutes = {
   dashboard: {
     admin: {
       path: appUrls.adminDashboard,
-      component: lazy(() => import('../portals/admin/dashboard')),
+      component: lazy(() => import('../features/dashboard')),
+      sections: [
+        {
+          path: appUrls.home,
+          component: lazy(() => import('../portals/admin/home')),
+        },
+        {
+          path: appUrls.subOption1,
+          component: lazy(() => import('../portals/admin/dummySubOption1')),
+        },
+        {
+          path: appUrls.subOption2,
+          component: lazy(() => import('../portals/admin/dummySubOption2')),
+        },
+      ],
     },
   },
 };
