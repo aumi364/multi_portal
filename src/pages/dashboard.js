@@ -1,9 +1,9 @@
 import React from 'react';
 import { Layout } from 'antd';
 // import Topbar from 'features/Topbar';
-import Sidebar from '../sidebar/sidebar';
-import { DashboardContainer } from '../../components/styled/dashboard';
-import DashboardRouter from './dashboardRouter';
+import Sidebar from '../features/sidebar/sidebar';
+import { DashboardContainer } from '../components/styled/dashboard';
+import DashboardRouter from '../routes/dashboardRouter';
 
 const { Content } = Layout;
 const styles = {
