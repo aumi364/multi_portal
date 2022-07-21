@@ -41,10 +41,8 @@ const SidebarWrapper = styled.div`
       justify-content: start;
       align-items: center;
       height: 100%;
-      color: black;
 
       h5 {
-        color: ${props => props.theme.grey};
         font-weight: 400;
         transition: all 0.3s ease;
       }
@@ -67,15 +65,15 @@ const SidebarWrapper = styled.div`
       }
 
       &--active {
-        background-color: ${props => tint(0.9, props.theme.primary)};
+        background-color: ${props => tint(0.9, props.theme.primary.main)};
+        color: ${props => props.theme.primary.dark};
 
         h5 {
-          color: ${props => props.theme.primary};
           font-weight: 700;
         }
 
         svg {
-          fill: ${props => props.theme.primary};
+          fill: ${props => props.theme.primary.main};
         }
       }
     }

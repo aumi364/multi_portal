@@ -1,11 +1,12 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, useLocation } from 'react-router-dom';
 import { Routes } from 'react-router';
-import { useGetCurrentUserRole } from '../../hooks/useGetCurrentUserRole';
-import { privateRoutes } from '../../routes/appRoutes';
-import SplashScreen from '../splashScreen';
+import { useGetCurrentUserRole } from '../hooks/useGetCurrentUserRole';
+import { privateRoutes } from './appRoutes';
+import SplashScreen from '../features/splashScreen';
+import { Spin } from 'antd';
 
-const NotFound = lazy(() => import('../../features/error/notFound'));
+const NotFound = lazy(() => import('../features/error/notFound'));
 
 const DashboardRouter = () => {
   const { pathname } = useLocation();
@@ -13,7 +14,7 @@ const DashboardRouter = () => {
   const routes = privateRoutes.dashboard[currentRole].sections;
 
   return (
-    <Suspense fallback={<SplashScreen />}>
+    <Suspense fallback={<Spin />}>
       <Routes>
         {routes?.map((route, i) => {
           const RouteComponent = route.component;

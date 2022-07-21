@@ -1,9 +1,10 @@
 import React from 'react';
 import { Layout } from 'antd';
-// import Topbar from 'features/Topbar';
-import Sidebar from '../sidebar/sidebar';
-import { DashboardContainer } from '../../components/styled/dashboard';
-import DashboardRouter from './dashboardRouter';
+// import topbar.js from 'features/topbar.js';
+import Sidebar from '../features/sidebar';
+import { DashboardContainer } from '../components/styled/dashboard';
+import DashboardRouter from '../routes/dashboardRouter';
+import Topbar from '../features/topbar.js';
 
 const { Content } = Layout;
 const styles = {
@@ -19,7 +20,7 @@ export default function Dashboard() {
   return (
     <DashboardContainer>
       <Layout style={{ height: '100vh' }}>
-        {/*<Topbar />*/}
+        <Topbar />
         <Layout style={styles.layout}>
           <Sidebar />
           <Layout className="main-content" style={{ height: '100vh' }}>

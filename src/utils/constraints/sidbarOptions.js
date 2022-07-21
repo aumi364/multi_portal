@@ -1,6 +1,6 @@
 import { FileOutlined, UserOutlined } from '@ant-design/icons';
 import React from 'react';
-import { appUrls } from '../../utils/constraints/appUrls';
+import { appUrls } from './appUrls';
 
 export const options = [
   {

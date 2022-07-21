@@ -29,7 +29,7 @@ function RoutesCollection() {
   const NotFound = publicRoutes.error.notFound.component;
   return (
     <div>
-      <Suspense fallback={<SplashScreen />}>
+      <Suspense fallback={<Spin />}>
         <Router>
           <Routes>
             <Route
