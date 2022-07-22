@@ -9,8 +9,8 @@ import { globalStyle } from './theme/globalStyle';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Global styles={globalStyle} />
       <div className="App">
+        <Global styles={globalStyle} />
         <RoutesCollection />
       </div>
     </ThemeProvider>

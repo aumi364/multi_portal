@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+function props() {}
+
 const TopbarWrapper = styled.div`
   .header {
     background-color: #ffffff;
@@ -8,7 +10,9 @@ const TopbarWrapper = styled.div`
     width: 100%;
     height: 6rem;
     padding: 0 3rem 0 26.5rem;
-
+    svg {
+      color: ${props => props.theme.primary.main};
+    }
     @media only screen and (max-width: 767px) {
       padding-left: 3rem;
     }

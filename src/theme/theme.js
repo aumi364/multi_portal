@@ -44,9 +44,9 @@ export const theme = {
   },
 
   primary: {
-    main: '#1dc7de',
-    light: '#88d8db',
-    dark: '#0892a3',
+    main: '#129bac',
+    light: '#30d4db',
+    dark: '#0a545e',
     contrastText: '#FFFFFF',
     transparentLight: 'rgba(91,198,210,0.2)',
     transparentLighter: 'rgba(224,248,255,0.2)',

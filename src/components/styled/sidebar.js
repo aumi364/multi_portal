@@ -53,40 +53,6 @@ const SidebarWrapper = styled.div`
         height: 2.5rem;
       }
     }
-
-    .sidebar-menu {
-      a {
-        margin: 1rem 0;
-        padding: 1rem 0;
-        padding-left: 20%;
-        position: relative;
-        width: 100%;
-        transition: all 0.3s ease-in-out;
-      }
-
-      &--active {
-        background-color: ${props => tint(0.9, props.theme.primary.main)};
-        color: ${props => props.theme.primary.dark};
-
-        h5 {
-          font-weight: 700;
-        }
-
-        svg {
-          fill: ${props => props.theme.primary.main};
-        }
-      }
-    }
-
-    &.ant-layout-sider-collapsed {
-      .sidebar-menu {
-        a {
-          h5 {
-            display: none;
-          }
-        }
-      }
-    }
   }
 `;
 

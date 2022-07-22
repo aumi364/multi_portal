@@ -25,7 +25,6 @@ export default function Sidebar() {
         collapsed={collapsed}
         style={{
           backgroundColor: '#fff',
-
           overflowY: 'auto',
         }}
       >
@@ -34,11 +33,16 @@ export default function Sidebar() {
         <Menu mode="inline">
           {options.map((singleOption, index) => {
             const { path, title, icon, children } = singleOption;
-            console.log(singleOption);
+
             return children ? (
-              <SubMenu key={title} icon={icon} title={title}>
+              <SubMenu
+                key={title}
+                icon={icon}
+                title={title}
+                className="sidebar-menu"
+              >
                 {children.map(subMenuItem => (
-                  <MenuItem key={subMenuItem.title}>
+                  <MenuItem key={subMenuItem.title} className="sidebar-menu">
                     <NavLink end to={subMenuItem.path}>
                       {subMenuItem.title}
                     </NavLink>
@@ -46,7 +50,7 @@ export default function Sidebar() {
                 ))}
               </SubMenu>
             ) : (
-              <MenuItem key={title} icon={icon}>
+              <MenuItem key={title} icon={icon} className="sidebar-menu">
                 <NavLink end to={path}>
                   {title}
                 </NavLink>
